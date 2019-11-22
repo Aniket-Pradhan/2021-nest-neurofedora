@@ -1,8 +1,7 @@
-20190909 NeuroFedora
+20201122 NeuroFedora
 ---------------------
 
-These are the slides for our talk on NeuroFedora_ at the `Open Source Brain
-workshop <http://www.opensourcebrain.org/docs/Help/Meetings#OSB_2019>`__.
+These are the slides for our talk on NeuroFedora_ for the Open Research Tools & Technologies devroom at FOSDEM2020_.
 
 All the text is in :code:`20190909_neurofedora.tex`. The other files are merely
 used to generate different outputs. Generally, it is enough to modify the main
@@ -20,3 +19,4 @@ License
 Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
 .. _NeuroFedora: https://neuro.fedoraproject.org
+.. _FOSDEM2020: https://research-fosdem.github.io
