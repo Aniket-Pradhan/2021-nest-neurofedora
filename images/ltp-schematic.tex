@@ -1,0 +1,27 @@
+\def\radiusneuron{0.2cm}
+\def\radiussynapse{0.02cm}
+\def\lendens{0.5cm}
+\def\lenax{2cm}
+\begin{tikzpicture}[scale=1, transform shape]
+  % Neuron 1
+  \def\circlex{1.5}
+  \def\circley{0}
+  \draw [FriendsMagenta] (\circlex, \circley) circle (\radiusneuron);
+  \foreach \angle in {240, 270,...,360} \draw [FriendsMagenta] ([shift=(\angle:\radiusneuron + 0.1cm )] \circlex, \circley) -- ++ (\angle:\radiusneuron+\lendens);
+  \draw [FriendsMagenta, very thick] ([shift=(120:\radiusneuron + 0.1cm )] \circlex, \circley) -- ++ (-1cm, \lenax);
+  \node [FriendsMagenta] at (\circlex, \circley - 1.5) {Smell};
+
+  % Neuron 2
+  \def\circlex{1}
+  \def\circley{3}
+  \draw (\circlex, \circley) circle (\radiusneuron);
+  \foreach \angle in {120, 150,...,240} \draw [FedoraBlue] ([shift=(\angle:\radiusneuron + 0.1cm )] \circlex, \circley) -- ++ (\angle:\radiusneuron+\lendens);
+  \draw [FedoraBlue, very thick] ([shift=(0:\radiusneuron + 0.1cm )] \circlex, \circley) -- ++ (\lenax, 0);
+  \node [FedoraBlue] at (\circlex + 0.5, \circley + 1) {Food};
+
+  % Synapse
+  \def\circlex{0.47}
+  \def\circley{2.11}
+  \draw [FirstGreen, fill=FirstGreen] (\circlex, \circley) circle (\radiussynapse);
+\end{tikzpicture}
+

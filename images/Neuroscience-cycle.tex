@@ -1,0 +1,43 @@
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           circle,
+           draw=black, very thick,
+           text=FedoraDarkBlue,
+           text width=6em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           <-,
+           very thick,
+           draw=FreedomPurple,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+\begin{tikzpicture}[node distance=1cm, auto,]
+ %nodes
+ \node[punkt, draw=FedoraBlue, text=FedoraBlue] (experiments) {Experimental work};
+ \node[punkt, draw=FriendsMagenta, text=FriendsMagenta, above right=of experiments]
+ (analysis) {Data analysis}
+ edge[pil, bend right=45] (experiments.north);
+ \node[punkt, draw=FeaturesOrange, text=FeaturesOrange, below right=of analysis]
+ (theory) {Theory}
+ edge[pil, bend right=45] (analysis.east);
+ \node[punkt, draw=FirstGreen, text=FirstGreen, below left=of theory]
+ (modelling) {Modelling}
+ edge[pil, bend right=45] (theory.south)
+ edge[pil, ->, bend left=45] (experiments.south);
+ % We make a dummy figure to make everything look nice.
+ % \node[above=of market] (dummy) {};
+ % \node[right=of dummy] (t) {Ultimate borrower}
+   % edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
+   % edge[pil, bend left=45] (formidler.east); % .east since we want
+                                             % % consistent style
+ % \node[left=of dummy] (g) {Ultimate lender}
+   % edge[pil, bend right=45] (market.west)
+   % edge[pil, bend right=45] (formidler.west)
+   % edge[pil,<->, bend left=45] node[auto] {Direct (a)} (t);
+\end{tikzpicture}
