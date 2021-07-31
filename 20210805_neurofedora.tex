@@ -1,4 +1,4 @@
-%% 2019 NeuroFedora contributors
+%% 2021 NeuroFedora contributors
 
 %% packages %%
 % support for coloured text
@@ -22,22 +22,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage[style=verbose,backend=biber,autocite=footnote]{biblatex}
 \addbibresource{masterbib.bib}
+
 % Use opensans
 \usepackage[default,oldstyle,scale=0.95]{opensans}
+
 % for strike through
 \usepackage[normalem]{ulem}
+
 % links, urls, refs
 \usepackage{hyperref}
 \hypersetup{colorlinks,linkcolor=FreedomPurple,urlcolor=FreedomPurple}
+
 % graphics
 \usepackage{graphicx}
+
 % algorithm
 \usepackage{algorithmic}
 \usepackage{textcomp}
 \usepackage{wrapfig}
 \usepackage{textgreek}
 \usepackage{euler}
-% \usepackage{minted}
+
+%\usepackage{minted}
 
 % beamer theme
 \usetheme[numbering=fraction]{metropolis}
@@ -51,15 +57,22 @@
 
 \renewcommand{\figurename}{}
 
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
 % Not needed in metropolis, but in general footnote citation fixes: https://tex.stackexchange.com/questions/44217/how-can-i-stop-footcite-from-hijacking-my-beamer-columns
 % how to use multiple references to the same footnote: https://tex.stackexchange.com/questions/27763/beamer-multiple-references-to-the-same-footnote
 
 %% title %%
-\title[NeuroFedora]{\includegraphics[keepaspectratio,width=.25\textwidth]{images/NeuroFedoraLogo01.png}\\NeuroFedora}
-\subtitle{Free Software for Free Neuroscience}
-\author{NeuroFedora Contributors}
-%\author{Ankur Sinha\\Ph.D. candidate: UH Biocomputation Group, UK,\\Volunteer: Fedora Project.}
-\date[]{}
+\title[NeuroFedora]{\includegraphics[keepaspectratio,width=.15\textwidth]{images/NeuroFedoraLogo01.png}\\NeuroFedora}
+\subtitle{FOSS and Free and Open (Neuro)Science}
+\author[NeuroFedora contributors]{\scriptsize NeuroFedora contributors\\\url{neuro.fedoraproject.org}}
+\date{}
+
 %% document begins %%
 \begin{document}
 
@@ -69,9 +82,33 @@
 \end{frame}
 
 %% Three slides for 5 minutes, so 9 slides for 15 minutes.
+\begin{frame}[c]{Open Science}
+	\alert{Everyone} should have the freedom to \alert{study, modify, and share} scientific material\footnotemark.
+	\pause{}
+	
+	Scientists, academics, students, researchers, \alert{non-scientists, and non-academics} should all have access to scientific material---irrespective of social status, location, age, nationality \ldots.
+	\footnotetext[1]{\url{http://opensourceforneuroscience.org/}}
+
+	\note{Open science is transparent and accessible knowledge that is shared and developed through collaborative networks.}
+\end{frame}
+
+\begin{frame}[c]{Neuro Science}
+	\begin{itemize}
+		\item How the brain functions (\textcolor{FriendsMagenta}{physiology})
+		\pause
+		\item How it is structured (\textcolor{FriendsMagenta}{anatomy})
+		\pause
+		\item About its chemicals (\textcolor{FriendsMagenta}{pharmacology, biochemistry})
+		\pause
+		\item How it processes information (\textcolor{FriendsMagenta}{computational})
+		\pause
+		\item About behaviours, and cognition (\textcolor{FriendsMagenta}{behavioural, cognitive})
+	\end{itemize}
+\end{frame}
+
 \section{How: Research Pipeline}
 
-\begin{frame}[c]{General workflow}
+\begin{frame}[c]{Basic Workflow}
 	\begin{figure}[h]
 		\centering
 %		\only<1>{\input{images/Neuroscience-cycle}}%
@@ -103,32 +140,34 @@
 	\note[item]{Lots of hardware and software is required for basic neuroscience research.}
 \end{frame}
 
-\begin{frame}[c]{Tools of the trade:\ II}
-	\textcolor{FedoraDarkBlue}{Tools for the dissemination of knowledge\footnotemark[4]:}
-	\begin{itemize}
-		\item visualisation,
-		\item academic writing,
-		\item non academic writing: blogging \ldots,
-		\item pod-casting,
-		\item video making,
-		\item creating teaching materials,
-		\item collaborative tools and utilities
-	\end{itemize}
-	\footnotetext[4]{also to a non-specialist audience.}
-	\note[item]{common tools used by people in science and research}
-\end{frame}
+%\begin{frame}[c]{Tools of the trade:\ II}
+%	\textcolor{FedoraDarkBlue}{Tools for the dissemination of knowledge\footnotemark[4]:}
+%	\begin{itemize}
+%		\item visualisation,
+%		\item academic writing,
+%		\item non academic writing: blogging \ldots,
+%		\item pod-casting,
+%		\item video making,
+%		\item creating teaching materials,
+%		\item collaborative tools and utilities
+%	\end{itemize}
+%	\footnotetext[4]{also to a non-specialist audience.}
+%	\note[item]{common tools used by people in science and research}
+%\end{frame}
 
 \section{Free/Open (neuro) Science}
 \begin{frame}[c]{The ideal, in short:}
 	Free/Open Science:\\\alert{Everyone} should have the freedom to \alert{share, study, and modify} scientific material.\\
 	
 	\vspace{0.5cm}
+	\note[item]{Summarizing everything}
+
 	FOSS\@:\\\alert{Everyone} should have the freedom to \alert{share, study, and modify} software\footnotemark[5].\\
 	\footnotetext[2]{\href{https://u.fsf.org/user-liberation}{Free software foundation}}
 	
 	\vspace{0.5cm}
 	\alert{Free/Open Science includes and relies heavily on Free/Open Source Software (FOSS).}
-	\note[item]{simple definitions}
+	\note[item]{With the help of NeuroFedora we want to consolidate the two movements}
 \end{frame}
 
 \begin{frame}[c]{So we strive to use more and more FOSS}
@@ -137,17 +176,21 @@
 		\includegraphics[width=\linewidth]{images/open-source-paper.png}
 	\end{figure}
 	\footnotetext[6]{\href{http://opensourceforneuroscience.org/}{Open source for neuroscience}}
-	\note[item]{reproducibility crisis. unable to reproduce data, results}
-	\note[item]{benefits of open-sourcing code. helps community. reuse. build-on and improve. publication becomes an advert for the code.}
+	\note[item]{A fun paper to read on Open Science + Open Software}
+	\note[item]{Discusses reproducibility crisis. Where people are unable to reproduce data, results}
+	\note[item]{Also the benefits of open-sourcing code. helps community. reuse. build-on and improve. publication becomes an advert for the code.}
 \end{frame}
 
 \section{NeuroFedora: why, how, what?}
+\note{Why do we need NeuroFedora?}
+\note{Let's talk about the neuroscience community first}
 
 \begin{frame}[c]{Neuroscience community: highly multidisciplinary}
 	\begin{itemize}
 		\item \alert{various specialities:} biologists, mathematicians, physicists, chemists, psychologists, \ldots, 
 		\item \alert{small proportion of trained software developers}
 	\end{itemize}
+	\note[item]{The community is multi-disciplinary}
 	\note[item]{Full of people from various fields}
 	\note[item]{Not all have the required XP}
 \end{frame}
@@ -166,6 +209,7 @@
 	\note[item]{The dev may not provide instructions on how to use the software}
 	\note[item]{Difficult for people who lack programming knowledge to build/use the tool directly from the dev.}
 	\note[item]{End users not always provide feedback}
+	\note[item]{Issues with the flowchart: 1. Dev assumes the end users are knowledgeable, who know how to build/install their tool? 2. The devs expect the end users to provide regular feedback, run tests etc.}
 \end{frame}
 
 \begin{frame}[c]{(Anecdotal) notes on development of research software}
@@ -195,7 +239,7 @@
 		\item \alert{rarely send improvements} upstream
 		\item are \alert{unaware of helpful development tools}
 	\end{itemize}
-	\note[item]{The other side of the bridge is the users}
+	\note[item]{The other side of the bridge are the users}
 	\note[item]{also suffer from resolving dependencies}
 	\note[item]{lack the required skill/knowledge of programming, they have a hard time setting up and using the software}
 	\note[item]{If correctness of a tool cannot be verified, how can the correctness of the scientific result be claimed?}
@@ -250,24 +294,59 @@
 	\footnotetext[7]{Researchers, academics, hobbyists, anyone!}
 \end{frame}
 
+\section{NeuroFedora: What we offer?}
+\note{So, what we, as a SIG, are offering to the community?}
+
+\begin{frame}[c]{Comp-Neuro Lab}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
+			\includegraphics[keepaspectratio,width=\textwidth]{images/comp-neuro-lab.png}
+		\end{column}
+  		\begin{column}{0.6\textwidth}	
+			\begin{itemize}
+				\item An OS to enable neuroscience
+				\item Contains a plethora of computational neuroscience tools
+				\item Packed with analysis and general productivity tools
+				\item Integrated with GNOME
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\note[item]{The comp-neuro OS is a "spin" of Fedora with all the neuro tools pre-installed}
+	\note[item]{Easy to use, just install and play}
+	\blfootnote{\url{https://labs.fedoraproject.org/en/comp-neuro/}}
+\end{frame}
+
+\begin{frame}[c]{Comp-Neuro Container}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+				\item A ready-to-use comp-neuro container
+				\item Can be used with Podman/Docker
+				\item Can be obtained from standard public container image registries like Docker Hub
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}	
+			\includegraphics[keepaspectratio,width=\textwidth]{images/podman-logo.png}
+		\end{column}
+	\end{columns}
+	\blfootnote{\url{https://docs.fedoraproject.org/en-US/neurofedora/containers/}}
+	\blfootnote{\url{https://podman.io/}}
+	\blfootnote{\url{https://www.docker.com/}}
+\end{frame}
+
 \begin{frame}[c]{NeuroFedora: current metrics}
 	\begin{itemize}
-		\item \alert{Turned a year old, in September 2019\footnotemark[8],}
-		\item \textcolor{FirstGreen}{20 volunteers}
-		\begin{itemize}
-			\item 16 package maintainers
-			\item 5 designers, newcomers
-			\item only 5 from a neuroscience background
-		\end{itemize}
+		\item \alert{Will be 3 years old, in September 2021!\footnotemark[8],}
+		\item \textcolor{FirstGreen}{~30 volunteer contributors}
 		\item \textcolor{FriendsMagenta}{software:}
 		\begin{itemize}
-			\item 135 tools (packages) ready to install\footnotemark[9]:
+			\item \textasciitilde{}200 tools (packages) ready to install\footnotemark[9]:
 			\begin{itemize}
-				\item Neuron, InterViews, NEST, Genesis, Brian (v1 and v2), Moose, python-libNeuroML, PyLEMS, PyNWB, \ldots
+				\item NeuroMLlite, pyNeuroML, NetPyNE, Neuron, InterViews, NEST, Genesis, Brian (v1 and v2), Moose, python-libNeuroML, PyLEMS, PyNWB, \ldots
 			\end{itemize}
-			\item \textasciitilde{}180 in queue\footnotemark[10].
+			\item \textasciitilde{}200 in queue\footnotemark[10].
 			\begin{itemize}
-				\item NeuroMLlite, pyNeuroML, NetPyNE, \ldots
+				\item EDEN, NeuroMynerva, FlyBrainLab, GeNN, \ldots
 			\end{itemize}
 		\end{itemize}
 	\end{itemize}
@@ -287,7 +366,7 @@
 		\end{column}
 		\begin{column}{0.8\textwidth}
 			\textcolor{FedoraBlue}{Mailing list:\ neuro-sig@lists.fedoraproject.org}\\
-			\textcolor{FirstGreen}{IRC:\ \#fedora-neuro on Freenode}\\
+			\textcolor{FirstGreen}{IRC:\ \#fedora-neuro on LiberaChat}\\
 			\textcolor{FeaturesOrange}{Telegram:\ t.me/NeuroFedora}\\
 			\textcolor{FriendsMagenta}{Documentation\ neuro.fedoraproject.org}\\
 			\textcolor{FirstGreen}{Blog:\ neuroblog.fedoraproject.org}\\
