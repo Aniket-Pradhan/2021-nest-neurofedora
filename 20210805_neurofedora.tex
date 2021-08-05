@@ -206,44 +206,47 @@
 			\end{tikzpicture}
 		\end{center}
 	\end{figure}
-	\note[item]{The dev may not provide instructions on how to use the software}
-	\note[item]{Difficult for people who lack programming knowledge to build/use the tool directly from the dev.}
-	\note[item]{End users not always provide feedback}
 	\note[item]{Issues with the flowchart: 1. Dev assumes the end users are knowledgeable, who know how to build/install their tool? 2. The devs expect the end users to provide regular feedback, run tests etc.}
-\end{frame}
-
-\begin{frame}[c]{(Anecdotal) notes on development of research software}
-	\begin{itemize}
-		\item often \alert{single developer}, or small development teams
-		\item limited \alert{maintenance, short-lived projects}
-		\item limited \alert{access to hardware/resources}
-		\item limited \alert{code quality}
-		\item limited \alert{use of established best practices}
-		\item limited \alert{testing for correctness (!)}
-		\item \alert{complex dependency chains}
-		\item lack of \alert{documentation and support}
-		\item lack of \alert{community development know-how}
-	\end{itemize}
-	\note[item]{Given how interdisciplinary neuroscience is, most researchers are NOT trained in development}
 	\note[item]{based on anecdotal evidence, software used in research is not of the best quality}
-	\note[item]{may or may neet development standards}
-	\note[item]{may have an instruction set on how to install/use the software}
-	\note[item]{resolving dependencies can be difficult}
-\end{frame}
-
-\begin{frame}[c]{(Anecdotal) notes on users of research software}
-	\begin{itemize}
-		\item \alert{waste time and effort} installing (and reinstalling) their software stacks
-		\item \alert{rarely run test suites (!)}
-		\item \alert{rarely report bugs} upstream
-		\item \alert{rarely send improvements} upstream
-		\item are \alert{unaware of helpful development tools}
-	\end{itemize}
-	\note[item]{The other side of the bridge are the users}
-	\note[item]{also suffer from resolving dependencies}
+	\note[item]{may or may not meet development standards}
+	\note[item]{may not have an instruction set on how to install/use the software}
+	\note[item]{users also suffer from resolving dependencies}
 	\note[item]{lack the required skill/knowledge of programming, they have a hard time setting up and using the software}
 	\note[item]{If correctness of a tool cannot be verified, how can the correctness of the scientific result be claimed?}
 \end{frame}
+
+%\begin{frame}[c]{(Anecdotal) notes on development of research software}
+%	\begin{itemize}
+%		\item often \alert{single developer}, or small development teams
+%		\item limited \alert{maintenance, short-lived projects}
+%		\item limited \alert{access to hardware/resources}
+%		\item limited \alert{code quality}
+%		\item limited \alert{use of established best practices}
+%		\item limited \alert{testing for correctness (!)}
+%		\item \alert{complex dependency chains}
+%		\item lack of \alert{documentation and support}
+%		\item lack of \alert{community development know-how}
+%	\end{itemize}
+%	\note[item]{Given how interdisciplinary neuroscience is, most researchers are NOT trained in development}
+%	\note[item]{based on anecdotal evidence, software used in research is not of the best quality}
+%	\note[item]{may or may neet development standards}
+%	\note[item]{may have an instruction set on how to install/use the software}
+%	\note[item]{resolving dependencies can be difficult}
+%\end{frame}
+%
+%\begin{frame}[c]{(Anecdotal) notes on users of research software}
+%	\begin{itemize}
+%		\item \alert{waste time and effort} installing (and reinstalling) their software stacks
+%		\item \alert{rarely run test suites (!)}
+%		\item \alert{rarely report bugs} upstream
+%		\item \alert{rarely send improvements} upstream
+%		\item are \alert{unaware of helpful development tools}
+%	\end{itemize}
+%	\note[item]{The other side of the bridge are the users}
+%	\note[item]{also suffer from resolving dependencies}
+%	\note[item]{lack the required skill/knowledge of programming, they have a hard time setting up and using the software}
+%	\note[item]{If correctness of a tool cannot be verified, how can the correctness of the scientific result be claimed?}
+%\end{frame}
 
 \begin{frame}[c]{Distributions liaison between developers and users}
 	\begin{figure}[h]
@@ -334,13 +337,35 @@
 	\blfootnote{\url{https://www.docker.com/}}
 \end{frame}
 
+\begin{frame}[c]{NeuroFedora: How can you help?}
+	\begin{itemize}
+		\item Packaging and maintenance
+		\pause
+		\item QA (testing)
+		\note[item]{Packages that we provide must go through the Fedora Quality Assurance (QA) process. You can simply enable the updates-testing repository and help by testing updates.}
+		\pause
+		\item File bugs, help upstream packages
+		\note[item]{Bugs must be reported to the bugzilla. Any bugs related to packages can be helped with at upstream}
+		\pause
+		\item Improve Documentation
+		\note[item]{User documentation is a most important resource. You can help by improving or contributing to our documentation.}
+		\pause
+		\item Help other users
+		\note[item]{We’ve set up communication channels to help users troubleshoot issues and get help. You can help by remaining present in the communication channels and answering users' questions.}
+		\pause
+		\item Spread the word!
+		\note[item]{Help us spread the word! Write about NeuroFedora, share your opinions on social media, help more people learn about the project and get involved!}
+	\end{itemize}
+	\blfootnote{\url{https://docs.fedoraproject.org/en-US/neurofedora/contributing/}}
+\end{frame}
+
 \begin{frame}[c]{NeuroFedora: current metrics}
 	\begin{itemize}
 		\item \alert{Will be 3 years old, in September 2021!\footnotemark[8],}
 		\item \textcolor{FirstGreen}{~30 volunteer contributors}
 		\item \textcolor{FriendsMagenta}{software:}
 		\begin{itemize}
-			\item \textasciitilde{}200 tools (packages) ready to install\footnotemark[9]:
+			\item \textasciitilde{}190 tools (packages) ready to install\footnotemark[9]:
 			\begin{itemize}
 				\item NeuroMLlite, pyNeuroML, NetPyNE, Neuron, InterViews, NEST, Genesis, Brian (v1 and v2), Moose, python-libNeuroML, PyLEMS, PyNWB, \ldots
 			\end{itemize}
